@@ -1,3 +1,6 @@
+html, body { background: #070423 !important; }
+* { outline: 1px solid rgba(43,210,255,0.15) !important; }
+
 /* Abusix Dark Theme for Ashby Embedded Job Board (iframe-injected CSS) */
 
 :root{
