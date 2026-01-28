@@ -1,99 +1,28 @@
-html, body { background: #070423 !important; }
-* { outline: 1px solid rgba(43,210,255,0.15) !important; }
+/* Abusix x Ashby – iframe styling (must be pure CSS, no <style> tag) */
 
-/* Abusix Dark Theme for Ashby Embedded Job Board (iframe-injected CSS) */
-
-:root{
-  --abusix-aqua:#2bd2ff;
-  --abusix-purple:#8966ff;
-  --abusix-periwinkle:#6a8aff;
-  --abusix-silver:#c5cedd;
-  --abusix-navy:#070423;
-  --abusix-white:#fefefe;
-
-  --text: rgba(254,254,254,0.92);
-  --muted: rgba(197,206,221,0.78);
-  --border: rgba(197,206,221,0.16);
-
-  --panel: rgba(255,255,255,0.05);
-  --panel2: rgba(255,255,255,0.035);
-  --hover: rgba(197,206,221,0.07);
-
-  --radius: 12px;
-  --radius-sm: 10px;
-}
-
-*{
+body{
+  background: #070423 !important;
+  color: rgba(254,254,254,0.92) !important;
   font-family: "Fabriga","Century Gothic",CenturyGothic,AppleGothic,"Segoe UI",Arial,sans-serif !important;
-  box-sizing: border-box;
 }
 
-/* Make iframe feel blended into your gradient */
-html, body{
-  background: transparent !important;
-  color: var(--text) !important;
-  margin: 0 !important;
-  padding: 0 !important;
+/* links */
+a{ color:#6a8aff !important; }
+a:hover{ color:#2bd2ff !important; }
+
+/* page padding inside iframe */
+body{ padding: 28px 22px !important; }
+
+/* headings */
+h1,h2,h3{ color: rgba(254,254,254,0.92) !important; }
+
+/* cards/rows (Ashby is pretty “div-heavy”, so we style common containers) */
+div{
+  border-color: rgba(197,206,221,0.14) !important;
 }
 
-/* Ensure the app can use full width */
-#root, main{
-  width: 100% !important;
-  max-width: none !important;
+/* soften white panels */
+section, main, article, form, [role="main"]{
+  background: rgba(255,255,255,0.04) !important;
+  border-radius: 14px !important;
 }
-
-/* Add comfortable padding so it doesn’t look “floating” */
-main{
-  padding: 24px !important;
-}
-
-/* Headings / text */
-h1,h2,h3,h4,h5,h6{ color: var(--text) !important; letter-spacing: -0.01em; }
-p, span, label, small, li, dt, dd{ color: var(--muted) !important; }
-
-/* Links */
-a{ color: var(--abusix-aqua) !important; text-decoration: none !important; }
-a:hover{ color: var(--abusix-periwinkle) !important; }
-
-/* Inputs / selects */
-input, select, textarea{
-  background: rgba(255,255,255,0.06) !important;
-  border: 1px solid var(--border) !important;
-  color: var(--text) !important;
-  border-radius: var(--radius-sm) !important;
-  outline: none !important;
-}
-input::placeholder, textarea::placeholder{ color: rgba(197,206,221,0.55) !important; }
-
-/* Buttons */
-button, [role="button"], input[type="submit"], a[class*="button"]{
-  background: linear-gradient(
-    90deg,
-    rgba(43,210,255,0.18),
-    rgba(106,138,255,0.16),
-    rgba(137,102,255,0.18)
-  ) !important;
-  border: 1px solid rgba(43,210,255,0.30) !important;
-  color: var(--text) !important;
-  border-radius: var(--radius-sm) !important;
-}
-
-/* “Card” styling – keep this targeted (NOT every container/div/li) */
-[class*="job"],
-[class*="posting"],
-[class*="listItem"]{
-  background: var(--panel2) !important;
-  border: 1px solid rgba(197,206,221,0.14) !important;
-  border-radius: var(--radius) !important;
-}
-
-/* Hover */
-[class*="job"]:hover,
-[class*="posting"]:hover,
-[class*="listItem"]:hover{
-  background: var(--hover) !important;
-  border-color: rgba(43,210,255,0.18) !important;
-}
-
-/* Footer / “Powered by Ashby” */
-footer, [class*="powered"]{ color: rgba(197,206,221,0.55) !important; }
