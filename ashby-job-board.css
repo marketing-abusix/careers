@@ -1,7 +1,4 @@
-/* ============================================================
-   Abusix Careers Page – Wrapper Styling for Ashby Embed
-   (This styles the page around the iframe, not inside it.)
-   ============================================================ */
+/* Abusix Dark Theme for Ashby Embedded Job Board (iframe-injected CSS) */
 
 :root{
   --abusix-aqua:#2bd2ff;
@@ -11,72 +8,89 @@
   --abusix-navy:#070423;
   --abusix-white:#fefefe;
 
-  --abusix-text: rgba(254,254,254,0.92);
-  --abusix-muted: rgba(197,206,221,0.78);
-  --abusix-border: rgba(197,206,221,0.14);
-  --abusix-panel: rgba(255,255,255,0.035);
+  --text: rgba(254,254,254,0.92);
+  --muted: rgba(197,206,221,0.78);
+  --border: rgba(197,206,221,0.16);
+
+  --panel: rgba(255,255,255,0.05);
+  --panel2: rgba(255,255,255,0.035);
+  --hover: rgba(197,206,221,0.07);
+
+  --radius: 12px;
+  --radius-sm: 10px;
 }
 
-/* Apply only to Careers page.
-   Elementor usually adds body classes like page-id-###.
-   If you know the page ID, replace :is(...) with .page-id-XXX
-*/
-body.page-template-default,
-body.page-id-0{
-  /* placeholder so this block doesn't break if page-id unknown */
-}
-
-/* ======= Careers Section Wrapper =======
-   Add CSS class "abusix-careers-wrap" to the SECTION/CONTAINER in Elementor
-*/
-.abusix-careers-wrap{
-  background:
-    radial-gradient(900px 520px at 18% 10%, rgba(43,210,255,0.18), transparent 55%),
-    radial-gradient(900px 520px at 78% 12%, rgba(137,102,255,0.16), transparent 55%),
-    radial-gradient(1100px 600px at 60% 90%, rgba(106,138,255,0.10), transparent 60%),
-    var(--abusix-navy);
-  color: var(--abusix-text);
-}
-
-/* Ensure all text inside wrapper uses Abusix fonts */
-.abusix-careers-wrap,
-.abusix-careers-wrap *{
+*{
   font-family: "Fabriga","Century Gothic",CenturyGothic,AppleGothic,"Segoe UI",Arial,sans-serif !important;
+  box-sizing: border-box;
 }
 
-/* Headings in wrapper */
-.abusix-careers-wrap h1,
-.abusix-careers-wrap h2,
-.abusix-careers-wrap h3{
-  color: var(--abusix-text) !important;
-  letter-spacing: -0.02em;
+/* Make iframe feel blended into your gradient */
+html, body{
+  background: transparent !important;
+  color: var(--text) !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
-/* Subtext */
-.abusix-careers-wrap p{
-  color: var(--abusix-muted) !important;
-}
-
-/* ======= Ashby iframe container =======
-   Add CSS class "abusix-ashby-frame" to the HTML widget OR a container around it
-*/
-.abusix-ashby-frame{
-  border-radius: 14px;
-  overflow: hidden;
-  border: 1px solid var(--abusix-border);
-  background: var(--abusix-panel);
-  box-shadow: 0 18px 60px rgba(0,0,0,0.35);
-}
-
-/* Make iframe responsive + full width */
-.abusix-ashby-frame iframe{
+/* Ensure the app can use full width */
+#root, main{
   width: 100% !important;
-  min-height: 720px; /* adjust if needed */
-  border: 0 !important;
-  display: block;
+  max-width: none !important;
 }
 
-/* Optional: tighten spacing above embed */
-.abusix-careers-wrap .elementor-widget-html{
-  margin-top: 18px;
+/* Add comfortable padding so it doesn’t look “floating” */
+main{
+  padding: 24px !important;
 }
+
+/* Headings / text */
+h1,h2,h3,h4,h5,h6{ color: var(--text) !important; letter-spacing: -0.01em; }
+p, span, label, small, li, dt, dd{ color: var(--muted) !important; }
+
+/* Links */
+a{ color: var(--abusix-aqua) !important; text-decoration: none !important; }
+a:hover{ color: var(--abusix-periwinkle) !important; }
+
+/* Inputs / selects */
+input, select, textarea{
+  background: rgba(255,255,255,0.06) !important;
+  border: 1px solid var(--border) !important;
+  color: var(--text) !important;
+  border-radius: var(--radius-sm) !important;
+  outline: none !important;
+}
+input::placeholder, textarea::placeholder{ color: rgba(197,206,221,0.55) !important; }
+
+/* Buttons */
+button, [role="button"], input[type="submit"], a[class*="button"]{
+  background: linear-gradient(
+    90deg,
+    rgba(43,210,255,0.18),
+    rgba(106,138,255,0.16),
+    rgba(137,102,255,0.18)
+  ) !important;
+  border: 1px solid rgba(43,210,255,0.30) !important;
+  color: var(--text) !important;
+  border-radius: var(--radius-sm) !important;
+}
+
+/* “Card” styling – keep this targeted (NOT every container/div/li) */
+[class*="job"],
+[class*="posting"],
+[class*="listItem"]{
+  background: var(--panel2) !important;
+  border: 1px solid rgba(197,206,221,0.14) !important;
+  border-radius: var(--radius) !important;
+}
+
+/* Hover */
+[class*="job"]:hover,
+[class*="posting"]:hover,
+[class*="listItem"]:hover{
+  background: var(--hover) !important;
+  border-color: rgba(43,210,255,0.18) !important;
+}
+
+/* Footer / “Powered by Ashby” */
+footer, [class*="powered"]{ color: rgba(197,206,221,0.55) !important; }
