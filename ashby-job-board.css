@@ -1,28 +1,102 @@
-/* Abusix x Ashby – iframe styling (must be pure CSS, no <style> tag) */
+/* Abusix Ashby Job Board – Dark Theme (class selectors only) */
 
-body{
+/* --- Base container(s) --- */
+.ashby-job-board,
+.ashby-embed,
+.ashby-jobBoard,
+.ashby-job-board-embed,
+.ashby-job-board-container {
   background: #070423 !important;
   color: rgba(254,254,254,0.92) !important;
-  font-family: "Fabriga","Century Gothic",CenturyGothic,AppleGothic,"Segoe UI",Arial,sans-serif !important;
 }
 
-/* links */
-a{ color:#6a8aff !important; }
-a:hover{ color:#2bd2ff !important; }
-
-/* page padding inside iframe */
-body{ padding: 28px 22px !important; }
-
-/* headings */
-h1,h2,h3{ color: rgba(254,254,254,0.92) !important; }
-
-/* cards/rows (Ashby is pretty “div-heavy”, so we style common containers) */
-div{
-  border-color: rgba(197,206,221,0.14) !important;
-}
-
-/* soften white panels */
-section, main, article, form, [role="main"]{
-  background: rgba(255,255,255,0.04) !important;
+/* --- Main panels/cards --- */
+.ashby-panel,
+.ashby-card,
+.ashby-content,
+.ashby-container,
+.ashby-job-board .ashby-panel,
+.ashby-job-board .ashby-card {
+  background: rgba(255,255,255,0.035) !important;
+  border: 1px solid rgba(197,206,221,0.14) !important;
   border-radius: 14px !important;
+  box-shadow: 0 18px 60px rgba(0,0,0,0.35) !important;
+}
+
+/* --- Headings / labels --- */
+.ashby-title,
+.ashby-heading,
+.ashby-section-title,
+.ashby-job-board-title,
+.ashby-open-positions-title {
+  color: rgba(254,254,254,0.92) !important;
+}
+
+/* --- Secondary text --- */
+.ashby-subtitle,
+.ashby-description,
+.ashby-meta,
+.ashby-muted,
+.ashby-secondary {
+  color: rgba(197,206,221,0.72) !important;
+}
+
+/* --- Job rows / list items --- */
+.ashby-job,
+.ashby-job-row,
+.ashby-job-list-item,
+.ashby-opening,
+.ashby-opening-row,
+.ashby-position {
+  background: transparent !important;
+  border-top: 1px solid rgba(197,206,221,0.14) !important;
+}
+
+/* --- “Clickable” job title styling --- */
+.ashby-job-title,
+.ashby-opening-title,
+.ashby-position-title,
+.ashby-job-link {
+  color: rgba(254,254,254,0.92) !important;
+}
+
+/* --- Accent links/buttons (best-effort via common Ashby classes) --- */
+.ashby-button,
+.ashby-cta,
+.ashby-apply-button,
+.ashby-primary-button {
+  background: linear-gradient(90deg, #2bd2ff, #6a8aff, #8966ff) !important;
+  border: none !important;
+  color: #070423 !important;
+  border-radius: 999px !important;
+}
+
+/* --- Inputs/selects (filters, if enabled) --- */
+.ashby-input,
+.ashby-select,
+.ashby-filter,
+.ashby-filters,
+.ashby-dropdown {
+  background: rgba(255,255,255,0.04) !important;
+  border: 1px solid rgba(197,206,221,0.18) !important;
+  color: rgba(254,254,254,0.92) !important;
+  border-radius: 10px !important;
+}
+
+/* --- Footer/legal links (hide if they show awkwardly mid-page) --- */
+.ashby-footer,
+.ashby-legal,
+.ashby-legal-links,
+.ashby-links,
+.ashby-imprint {
+  display: none !important;
+}
+
+/* --- Responsive tweaks --- */
+@media (max-width: 860px) {
+  .ashby-panel,
+  .ashby-card,
+  .ashby-content {
+    border-radius: 12px !important;
+  }
 }
